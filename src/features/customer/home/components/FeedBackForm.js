@@ -23,7 +23,8 @@ function FeedBackForm(props) {
 
         number: yup.number().required('please enter your phone number')
             .min(1000000000, "Phone number must be 10 characters")
-            .max(9999999999, "Phone number must be 10 characters")
+            .max(9999999999, "Phone number must be 10 characters"),
+        feedback: yup.string().required('please enter your feedback')
     })
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -105,23 +106,23 @@ function FeedBackForm(props) {
                                 <Grid item xs={12}>
                                     <TextField
                                         fullWidth
-                                        label="Telephone number"
-                                        {...register("number")}
+                                        label="Nhận xét đánh giá..."
+                                        {...register("feedback")}
                                         InputProps={{ style: { fontSize: '1.6rem' } }}
                                         InputLabelProps={{ style: { fontSize: '1.6rem' } }}
-                                        error={!!errors.number?.message}
+                                        error={!!errors.feedback?.message}
                                         multiline
                                         rows={4}
                                     />
                                     <Typography
                                         sx={{ fontSize: '1.2rem', lineHeight: '1.2rem', color: 'red', ml: 1 }}
                                     >
-                                        {errors.number?.message}
+                                        {errors.feedback?.message}
                                     </Typography>
                                 </Grid>
                             </Grid>
 
-                            <Button fullWidth variant="contained" sx={{ mt: 2, fontSize: '1.8rem', fontWeight: 'bold' }} type="submit">Login</Button>
+                            <Button fullWidth variant="contained" sx={{ mt: 2, fontSize: '1.8rem', fontWeight: 'bold' }} type="submit">Send</Button>
                         </form>
                     </Paper>
                 </Grid>

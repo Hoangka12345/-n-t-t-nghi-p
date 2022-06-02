@@ -27,7 +27,7 @@ const Styles = {
         fontStyle: 'italic',
         fontSize: '2rem',
         lineHeight: '2rem',
-        margin: '1rem 0',
+        margin: '1.5rem 0',
     }
 }
 

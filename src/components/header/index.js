@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import queryString from "query-string";
+import { useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Box, Container, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import CloseIcon from '@mui/icons-material/Close';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -31,8 +32,7 @@ function Header(props) {
         Register: 'register',
     }
 
-    // const LoggedInUser = useSelector(state => state.user.current)
-    // const isLogin = !!LoggedInUser.id
+    const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const [mode, setMode] = useState(Mode.Login)
     const [anchorEl, setAnchorEl] = useState(null);
@@ -64,22 +64,44 @@ function Header(props) {
     }
 
     return (
-        <Box sx={{ backgroundColor: '#252525', padding: '5px 0', position: 'fixed', width: '100vw', zIndex: '1' }}>
+        <Box sx={{ backgroundColor: '#252525', position: 'fixed', width: '100vw', zIndex: '1' }}>
             <Container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Box sx={{ width: '200px' }}>
+                <Box sx={{ width: '200px' }} as={Link} to="/">
                     <img src={logo} width="100%" />
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                    <NavLink to="/" className="link">
-                        <Typography sx={styles.link} variant="body2">Du lich</Typography>
-                    </NavLink>
-                    <NavLink to="/" className="link" variant="body2">
-                        <Typography sx={styles.link}>Van Hoa</Typography>
-                    </NavLink>
-                    <NavLink to="/" className="link" variant="body2">
-                        <Typography sx={styles.link}>Am thuc</Typography>
-                    </NavLink>
-                </Box>
+                <div className="header__list">
+                    <div className="header__link header__link-tour">
+                        Places to go in Vietnam
+                        <div className="menu_tour">
+                            <ul className="menu_list">
+                                <li className="menu_item" >
+                                    <Link
+                                        className="link"
+                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "northern_vietnam" }) }}
+                                    >NORTHERN VIETNAM</Link>
+                                </li>
+                                <li className="menu_item">
+                                    <Link
+                                        className="link"
+                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "center_vietnam" }) }}
+                                    >CENTER VIETNAM</Link>
+                                </li>
+                                <li className="menu_item">
+                                    <Link
+                                        className="link"
+                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "southern_vietnam" }) }}
+                                    >SOUTHERN VIETNAM</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="header__link">
+                        Văn Hóa
+                    </div>
+                    <div className="header__link">
+                        Ẩm Thực
+                    </div>
+                </div>
                 <Box>
                     <Button
                         variant="text"
