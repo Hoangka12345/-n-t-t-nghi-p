@@ -77,19 +77,19 @@ function Header(props) {
                                 <li className="menu_item" >
                                     <Link
                                         className="link"
-                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "northern_vietnam" }) }}
+                                        to={{ pathname: '/tours', search: queryString.stringify({ _place: "northern_vietnam" }) }}
                                     >NORTHERN VIETNAM</Link>
                                 </li>
                                 <li className="menu_item">
                                     <Link
                                         className="link"
-                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "center_vietnam" }) }}
+                                        to={{ pathname: '/tours', search: queryString.stringify({ _place: "center_vietnam" }) }}
                                     >CENTER VIETNAM</Link>
                                 </li>
                                 <li className="menu_item">
                                     <Link
                                         className="link"
-                                        to={{ pathname: '/tour', search: queryString.stringify({ _place: "southern_vietnam" }) }}
+                                        to={{ pathname: '/tours', search: queryString.stringify({ _place: "southern_vietnam" }) }}
                                     >SOUTHERN VIETNAM</Link>
                                 </li>
                             </ul>

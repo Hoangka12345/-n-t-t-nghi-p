@@ -4,12 +4,23 @@ import { Box, Paper } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import { useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
 
 Tour.propTypes = {
 
 };
 
 function Tour(props) {
+    const navigate = useNavigate()
+
+    const handelClickDetail = () => {
+        navigate({
+            pathname: '/tour-detail',
+            search: queryString.stringify({ _id: "123" })
+        })
+    }
+
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ minHeight: '50rem', width: '100%' }}>
@@ -51,7 +62,7 @@ function Tour(props) {
                     </Box>
                 </Box>
                 <Box sx={{ padding: '1rem 2rem' }}>
-                    <Box sx={{ fontSize: '2rem', lineHeight: '2.5rem' }}>
+                    <Box sx={{ fontSize: '2rem', lineHeight: '2.5rem', cursor: 'pointer' }} onClick={handelClickDetail}>
                         Tour Sapa 3 ngày 2 đêm| Moana – Fansipan – Bản Cát Cát
                     </Box>
                     <Box sx={{
