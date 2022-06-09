@@ -26,7 +26,8 @@
 .header__link-tour:hover .menu_tour {
   /* display: block; */
   opacity: 1;
-  height: 100px;
+  height: 10rem;
+  top: 7rem;
   transition: all 0.2s ease;
 }
 
@@ -36,7 +37,7 @@
   background-color: #ebebeb;
   opacity: 0;
   position: absolute;
-  top: 7rem;
+  top: -2rem;
   left: 0;
   border-bottom: 3px solid #f09936;
 }

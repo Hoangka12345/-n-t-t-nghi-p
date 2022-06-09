@@ -10,3 +10,7 @@ body {
   padding: 0;
   background-color: #f0f2f5;
 }
+
+li {
+  margin-top: 1rem;
+}

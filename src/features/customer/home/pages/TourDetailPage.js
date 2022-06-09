@@ -8,6 +8,7 @@ import BookingRight from '../components/tourDetail/BookingRight';
 import BookingLeft from '../components/tourDetail/BookingLeft';
 import Planning from '../components/tourDetail/Planning';
 import RelatedTour from '../components/tourDetail/RelatedTour';
+import BackToTop from '../../../../components/BackToTop';
 
 function TourDetailPage(props) {
 
@@ -38,6 +39,7 @@ function TourDetailPage(props) {
                     </Grid>
                 </Grid>
             </Container>
+            <BackToTop />
             <Footer />
         </div>
     );

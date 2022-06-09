@@ -50,10 +50,14 @@ function Service(props) {
                     </TableBody>
                 </Table>
             </TableContainer>
+            <Box sx={{ fontSize: '1.3rem', lineHeight: '1.8rem', mt: 2, fontStyle: 'italic' }}>
+                <Box>**Trẻ em (từ 6 - 9 tuổi) có tiêu chuẩn 01 ghế ngồi riêng trên xe, vé tham quan, suất ăn riêng nhưng phải ngủ chung với bố mẹ.**</Box>
+                <Box sx={{ mt: 1 }}>***Giá có thể thay đổi tùy vào thời điểm tour khởi hành và dịch vụ theo yêu cầu - Liên hệ Tổng đài <Box component='span' sx={{ color: 'red' }}>1900 3398</Box> để được báo giá chi tiết.</Box>
+            </Box>
             <Box >
                 {services.rules.map(rule => {
                     return (
-                        <Box sx={{ mt: 2 }}>
+                        <Box sx={{ mt: 2, ml: 1 }}>
                             <Typography sx={{ fontSize: '1.6rem', fontWeight: 'bold', color: '#B22222', textDecoration: 'underline', textAlign: 'center' }}>{rule.type}</Typography>
                             <ul>
                                 {rule.content.map(data => {
@@ -65,6 +69,10 @@ function Service(props) {
                         </Box>
                     )
                 })}
+                <Box sx={{ fontSize: '1.4rem', lineHeight: '2rem', fontWeight: 'bold' }}>
+                    <Box component='span' sx={{ textDecoration: 'underline' }}>Note: </Box>
+                    Giá trẻ em chỉ áp dụng khi số lượng trẻ em không chiếm đến 10% số lượng cả đoàn khách.
+                </Box>
             </Box>
         </Box>
     );

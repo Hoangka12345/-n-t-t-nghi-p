@@ -9,6 +9,7 @@ import tour from '../../../../assets/tour.psd';
 import Tour from '../components/Tour';
 import FavoriteTours from '../components/FavoriteTours';
 import Footer from '../../../../components/footer';
+import BackToTop from '../../../../components/BackToTop';
 
 TourPage.propTypes = {
 
@@ -64,24 +65,11 @@ function TourPage(props) {
                             </Box>
                         </Grid>
                         <Grid container spacing={3}>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
-                                <Tour />
-                            </Grid>
+                            {[...new Array(6)].map(() => (
+                                <Grid item md={4} sm={6} xs={12}>
+                                    <Tour />
+                                </Grid>
+                            ))}
                             <Pagination sx={{ margin: '1.5rem auto' }} size="large" count={10} color="primary" />
                         </Grid>
                     </Grid>
@@ -101,6 +89,7 @@ function TourPage(props) {
                     </Grid>
                 </Grid>
             </Container>
+            <BackToTop />
             <Footer />
         </Box>
     );

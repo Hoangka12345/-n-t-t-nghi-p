@@ -7,6 +7,7 @@ import Intro from '../components/intro';
 import { intro, places } from '../../../../fakeData';
 import FeedBackList from '../components/FeedBackList';
 import FeedBackForm from '../components/FeedBackForm';
+import BackToTop from '../../../../components/BackToTop';
 
 const Styles = {
     title: {
@@ -115,6 +116,7 @@ function HomePage(props) {
                     <FeedBackForm />
                 </Grid>
             </Container>
+            <BackToTop />
             <Footer />
         </Box>
     );
