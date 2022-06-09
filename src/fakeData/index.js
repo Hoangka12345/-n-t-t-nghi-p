@@ -82,3 +82,100 @@ export const feedbacks = [
         rating: '30'
     },
 ]
+
+export const plan =
+{
+    id: 1,
+    title: 'THÀNH PHỐ HỒ CHÍ MINH – PHAN THIẾT ',
+    content: [
+        {
+            day: 1,
+            contentDetail: 'Xe và Hướng dẫn viên (HDV) công ty Vietnam Booking đón đoàn tại điểm hẹn. Đoàn khởi hành đi đến thành phố Phan Thiết, bắt đầu chương trình tour Phú Quý 2N2Đ.',
+            note: 'Nếu quý khách đăng ký đi bằng xe giường nằm (số lượng khách đoàn dưới 25 người). Quý khách sẽ di chuyển ra bến xe Lê Hồng Phong, Quận 5 để tập trung đón khách'
+        },
+        {
+            day: 2,
+            contentDetail: 'Cập bến đất liền, xe đưa quý khách đi dùng bữa trưa tại nhà hàng. Sau đó, xe lại đưa đoàn khách về đến TP.HCM.',
+            note: 'Thứ tự và chi tiết trong chương trình có thể thay đổi cho phù hợp với tình hình thực tế, nhưng vẫn đảm bảo đủ điểm đến tham quan!'
+        },
+        {
+            day: 3,
+            contentDetail: 'Xe và Hướng dẫn viên (HDV) công ty Vietnam Booking đón đoàn tại điểm hẹn. Đoàn khởi hành đi đến thành phố Phan Thiết, bắt đầu chương trình tour Phú Quý 2N2Đ.',
+            note: 'Nếu quý khách đăng ký đi bằng xe giường nằm (số lượng khách đoàn dưới 25 người). Quý khách sẽ di chuyển ra bến xe Lê Hồng Phong, Quận 5 để tập trung đón khách'
+        }
+    ]
+}
+
+export const services = {
+    transports: [
+        {
+            time: 'các ngày trong tuần',
+            Transport: 'xe ghế ngồi',
+            adults: 2690000,
+            children: 2490000,
+        },
+        {
+            time: 'các ngày trong tuần',
+            Transport: 'máy bay',
+            adults: 2790000,
+            children: 2590000,
+        }
+    ],
+    rules: [
+        {
+            type: 'GIÁ TOUR BAO GỒM',
+            content: [
+                'Xe du lịch chất lượng cao.',
+                'Tàu cao tốc khứ hồi Phan Thiết – Phú Quý – Phan Thiết.',
+                'Lưu trú: nhà nghỉ máy lạnh/Khách sạn tương đương 1* hoặc, Homestay như lịch trình tour (2 - 4 – 6 – 8  khách/phòng).',
+                'Ăn uống: 02 bữa sáng (01 tô – 01 ly) + 03 bữa chính theo ẩm thực địa phương.',
+                'Xe máy tham quan đảo.',
+                'HDV phục vụ, hướng dẫn đoàn suốt tuyến.',
+                'Bảo hiểm du lịch trọn gói, tối đa 10,000,000vnđ/trường hợp.',
+                'Quà tặng : Nước suối:  500ml (01 chai/người/ngày) + nón du lịch, khăn lạnh.',
+            ]
+        },
+        {
+            type: 'GIÁ TOUR KHÔNG BAO GỒM',
+            content: [
+                'Các chi phí cá nhân khác: điện thoại, giặt ủi, thức uống ngoài chương trình.',
+                'VAT.',
+                'Các khoản phụ thu.',
+                'Tiền tip trong chuyến đi cho nhân viên phục vụ, hướng dẫn viên, tài xế.',
+            ]
+        }
+    ]
+
+}
+
+export const tours = [
+    {
+        id: 1,
+        thumbnail: 'https://vnn-imgs-f.vgcloud.vn/2021/06/21/07/thieu-nu-ha-thanh-xinh-xan-dien-do-goi-cam-thieu-dot-moi-anh-nhin.jpg',
+        title: 'Tour du lịch Phú Quý bằng tàu cao tốc Superdong: Gành Hang – Cột Cờ – Cánh đồng quạt gió',
+        price: '2690000',
+        time: 'Liên hệ'
+    },
+    {
+        id: 2,
+        thumbnail: 'https://bloggioitre.net/wp-content/uploads/2021/11/anh-gai-xinh-vu-to-17.jpg',
+        title: 'Tour du lịch Phú Quý bằng tàu cao tốc Superdong: Gành Hang – Cột Cờ – Cánh đồng quạt gió',
+        price: '2990000',
+        time: 'thứ 2'
+    },
+    {
+        id: 3,
+        thumbnail: 'https://ku11.io/wp-content/uploads/2021/12/nu-streamer-ven-ao-show-nguc-dep-van-nguoi-me.jpg',
+        title: 'Tour du lịch Phú Quý bằng tàu cao tốc Superdong: Gành Hang – Cột Cờ – Cánh đồng quạt gió',
+        price: '2670000',
+        time: 'Liên hệ'
+    },
+    {
+        id: 4,
+        thumbnail: 'http://static.gaixinh24h.net/2020/08/097d2193-jjeong-i-nang-hot-girl-han-quoc-mat-xinh-nguc-khung-1024x623-1.jpg',
+        title: 'Tour du lịch Phú Quý bằng tàu cao tốc Superdong: Gành Hang – Cột Cờ – Cánh đồng quạt gió',
+        price: '2990000',
+        time: 'Liên hệ'
+    },
+]
+

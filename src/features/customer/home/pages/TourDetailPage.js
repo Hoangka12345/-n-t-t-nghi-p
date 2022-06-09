@@ -4,7 +4,10 @@ import Footer from '../../../../components/footer';
 import { Box, Container, Grid } from '@mui/material';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import TourIntro from '../components/tourDetail/TourIntro';
-import Booking from '../components/tourDetail/Booking';
+import BookingRight from '../components/tourDetail/BookingRight';
+import BookingLeft from '../components/tourDetail/BookingLeft';
+import Planning from '../components/tourDetail/Planning';
+import RelatedTour from '../components/tourDetail/RelatedTour';
 
 function TourDetailPage(props) {
 
@@ -25,9 +28,12 @@ function TourDetailPage(props) {
                     <Grid container sx={{ mt: 2 }} spacing={4}>
                         <Grid item xs={8} >
                             <TourIntro />
+                            <Planning />
+                            <BookingLeft />
+                            <RelatedTour />
                         </Grid>
                         <Grid item xs={4} sx={{}}>
-                            <Booking />
+                            <BookingRight />
                         </Grid>
                     </Grid>
                 </Grid>

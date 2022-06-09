@@ -6,11 +6,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-Booking.propTypes = {
+BookingRight.propTypes = {
 
 };
 
-function Booking(props) {
+function BookingRight(props) {
     const [value, setValue] = useState(new Date('2014-08-18T21:11:54'))
 
     const handleChangeDate = (newValue) => {
@@ -103,4 +103,4 @@ function Booking(props) {
     );
 }
 
-export default Booking;
+export default BookingRight;
