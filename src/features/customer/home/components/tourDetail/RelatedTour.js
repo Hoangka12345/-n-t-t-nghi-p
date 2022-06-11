@@ -16,12 +16,12 @@ function RelatedTour(props) {
             <Box sx={{ mt: 1 }}>
                 {tours.map(tour => {
                     return (
-                        <Grid container key={tour.id} spacing={3} sx={{ mt: 1 }}>
+                        <Grid container key={tour.id} spacing={3} sx={{ mt: 0 }}>
                             <Grid item xs={3}>
-                                <img src={tour.thumbnail} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src={tour.thumbnail} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }} />
                             </Grid>
                             <Grid item xs={9}>
-                                <Box sx={{ fontSize: '1.6rem', lineHeight: '2.5rem' }}>{tour.title}</Box>
+                                <Box sx={{ fontSize: '1.6rem', lineHeight: '2rem', cursor: 'pointer' }}>{tour.title}</Box>
                                 <Box sx={{ fontSize: '1.6rem', mt: 1.5 }}>
                                     Price:
                                     <Box component="span" sx={{ fontSize: '1.8rem', fontWeight: 'bold', ml: 0.5 }}>
