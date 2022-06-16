@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, FormControl, MenuItem, Paper, TextField, Stack, InputLabel } from '@mui/material';
+import { Box, Button, FormControl, MenuItem, Paper, TextField, Stack } from '@mui/material';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+
+import { Link } from 'react-router-dom';
 
 BookingLeft.propTypes = {
 
@@ -79,7 +81,13 @@ function BookingLeft(props) {
                             </FormControl>
                         </Box>
                     </Box>
-                    <Button fullWidth variant="contained" sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.4rem', '&:hover': { backgroundColor: "#f3c113" } }}>Đặt Tour</Button>
+                    <Button
+                        fullWidth
+                        variant="contained"
+                        sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.4rem', '&:hover': { backgroundColor: "#f3c113" } }}
+                        as={Link}
+                        to="/tours/123/check-out"
+                    >Đặt Tour</Button>
                 </form>
             </Paper>
         </Box>

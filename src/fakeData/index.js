@@ -179,3 +179,32 @@ export const tours = [
     },
 ]
 
+export const addresses = [
+    {
+        id: 1,
+        thumbnail: 'http://baodautu.vn/Images/thuylien/2022/03/17/fpt-muc-tieu-lai-7618-ty-dong-tro-thanh-doi-tac-cua-cac-khach-hang-trieu-usd1647503317.png',
+        city: 'Tp. Hồ Chí Minh',
+        address: [
+            '164 Lê Thánh Tôn, Bến Thành, Quận 1',
+            '54 Phạm Hồng Thái, Bến Thành, Quận 1',
+            '190-192 Trần Quý, Phường 6, Quận 11',
+        ]
+    },
+    {
+        id: 2,
+        thumbnail: 'http://baodautu.vn/Images/thuylien/2022/03/17/fpt-muc-tieu-lai-7618-ty-dong-tro-thanh-doi-tac-cua-cac-khach-hang-trieu-usd1647503317.png',
+        city: 'Hà Nội',
+        address: [
+            '30 Phan Chu Trinh, Quận Hoàn Kiếm'
+        ]
+    },
+    {
+        id: 3,
+        thumbnail: 'http://baodautu.vn/Images/thuylien/2022/03/17/fpt-muc-tieu-lai-7618-ty-dong-tro-thanh-doi-tac-cua-cac-khach-hang-trieu-usd1647503317.png',
+        city: 'Đà Nẵng',
+        address: [
+            '174 Nguyễn Văn Linh, quận Thanh Khê'
+        ]
+    },
+]
+
