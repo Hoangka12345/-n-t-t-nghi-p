@@ -1,27 +1,42 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, FormControl, MenuItem, Paper, TextField, Stack, InputLabel } from '@mui/material';
+import { Box, Button, FormControl, MenuItem, Paper, TextField, Stack } from '@mui/material';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+import { useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
 
 BookingRight.propTypes = {
 
 };
 
 function BookingRight(props) {
+    const navigate = useNavigate()
     const [value, setValue] = useState(new Date('2014-08-18T21:11:54'))
 
+    const summary = {
+        discount: 160000,
+        status: 'oke'
+    }
+
     const handleChangeDate = (newValue) => {
-        setValue(newValue);
-    };
+        setValue(newValue)
+    }
 
     const [customer, setCustomer] = React.useState(1);
 
     const handleChange = (event) => {
-        setCustomer(event.target.value);
-    };
+        setCustomer(event.target.value)
+    }
+
+    const handelClick = () => {
+        navigate({
+            pathname: "/check-out",
+            search: queryString.stringify(summary)
+        })
+    }
 
     return (
         <Box>
@@ -77,7 +92,12 @@ function BookingRight(props) {
                             </FormControl>
                         </Box>
                     </Box>
-                    <Button fullWidth variant="contained" sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.6rem', '&:hover': { backgroundColor: "#f3c113" } }}>Đặt Tour</Button>
+                    <Button
+                        fullWidth
+                        variant="contained"
+                        sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.6rem', '&:hover': { backgroundColor: "#f3c113" } }}
+                        onClick={handelClick}
+                    >Đặt Tour</Button>
                 </form>
             </Paper>
             <Paper sx={{ mt: 2, borderRadius: '0.5rem' }}>

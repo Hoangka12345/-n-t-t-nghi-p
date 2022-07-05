@@ -6,7 +6,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import Select from '@mui/material/Select';
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
 
 BookingLeft.propTypes = {
 
@@ -14,16 +15,28 @@ BookingLeft.propTypes = {
 
 function BookingLeft(props) {
     const [value, setValue] = useState(new Date('2014-08-18T21:11:54'))
+    const navigate = useNavigate()
+    const summary = {
+        discount: 160000,
+        status: 'oke'
+    }
 
     const handleChangeDate = (newValue) => {
         setValue(newValue);
-    };
+    }
 
     const [customer, setCustomer] = React.useState(1);
 
     const handleChange = (event) => {
         setCustomer(event.target.value);
-    };
+    }
+
+    const handelClickCheckout = () => {
+        navigate({
+            pathname: '/check-out',
+            search: queryString.stringify(summary)
+        })
+    }
 
     return (
         <Box sx={{ mt: 4 }}>
@@ -84,9 +97,8 @@ function BookingLeft(props) {
                     <Button
                         fullWidth
                         variant="contained"
-                        sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.4rem', '&:hover': { backgroundColor: "#f3c113" } }}
-                        as={Link}
-                        to="/tours/123/check-out"
+                        sx={{ backgroundColor: "#ffc600", color: "black", fontSize: '1.6rem', '&:hover': { backgroundColor: "#f3c113" } }}
+                        onClick={handelClickCheckout}
                     >Đặt Tour</Button>
                 </form>
             </Paper>
