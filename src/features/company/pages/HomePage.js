@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, Grid, Pagination, Paper } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { Box, Container, Grid, Pagination, Paper } from "@mui/material";
 import Header from "../../../components/headerCompany";
 import Footer from "../../../components/footer";
 import Tour from "../../../components/Tour";
@@ -9,8 +9,6 @@ import Tour from "../../../components/Tour";
 HomePage.propTypes = {};
 
 function HomePage(props) {
-  const navigate = useNavigate();
-
   return (
     <Box>
       <Header />
