@@ -8,6 +8,7 @@ import Tour from "../../../components/Tour";
 import Search from "../components/filters/Search";
 import RegionFilter from "../components/filters/RegionFilter";
 import PriceFilter from "../components/filters/PriceFilter";
+import SortPriceFilter from "../components/filters/SortPriceFilter";
 
 HomePage.propTypes = {};
 
@@ -27,6 +28,7 @@ function HomePage(props) {
               }}
             >
               <Search />
+              <SortPriceFilter />
               <RegionFilter />
               <PriceFilter />
             </Paper>
