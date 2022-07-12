@@ -30,8 +30,8 @@ function Header(props) {
   const navigate = useNavigate();
 
   const handelClick = (title) => {
-    if (title === "history") {
-      navigate("/history");
+    if (title === "create") {
+      navigate("/company/create");
     } else if (title === "nature") {
       navigate("/nature");
     } else if (title === "food") {
@@ -40,15 +40,21 @@ function Header(props) {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#252525", position: "fixed", width: "100vw", zIndex: "1" }}>
+    <Box sx={{ backgroundColor: "#252525", position: "fixed", width: "100vw", zIndex: "2" }}>
       <Container sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Box sx={{ width: "200px" }} as={Link} to="/company">
           <img src={logo} width="100%" />
         </Box>
         <div className="header__list">
-          <div className="header__link">Create Tour</div>
-          <div className="header__link">Dashboard</div>
-          <div className="header__link">Transaction History</div>
+          <div className="header__link" onClick={() => handelClick("create")}>
+            Create Tour
+          </div>
+          <div className="header__link" onClick={() => handelClick("dashboard")}>
+            Dashboard
+          </div>
+          <div className="header__link" onClick={() => handelClick("transactionHistory")}>
+            Transaction History
+          </div>
         </div>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />

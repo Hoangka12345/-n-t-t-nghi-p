@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Paper } from "@mui/material";
+import { Box, Chip, Paper } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
@@ -118,6 +118,10 @@ function Tour(props) {
           >
             <EventAvailableIcon fontSize="large" />
             <Box component="span">KH: Các ngày trong tuần</Box>
+          </Box>
+          <Box sx={{ mt: 2 }}>
+            <Chip label="available" color="info" sx={{ fontSize: "1.6rem" }} />
+            <Chip label="1" color="info" sx={{ fontSize: "1.6rem", ml: 2 }} />
           </Box>
           <Box
             sx={{

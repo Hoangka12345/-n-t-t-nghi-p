@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { northern, central, south } from "../../../fakeData/City";
 import NumberFormat from "react-number-format";
 
-EditForm.propTypes = {};
+CreateForm.propTypes = {};
 
-function EditForm(props) {
+function CreateForm(props) {
   const [regions, setRegions] = useState("");
 
   const [city, setCity] = useState("");
@@ -67,11 +67,28 @@ function EditForm(props) {
             label="Title"
             variant="outlined"
             fullWidth
-            sx={{ mb: 2, "& label": { fontSize: "1.3rem" } }}
+            sx={{
+              mb: 2,
+              "& label": {
+                fontSize: "1.4rem",
+                paddingRight: 1,
+                backgroundColor: "#f0f2f5",
+              },
+            }}
           />
         </Grid>
         <Grid item xs={4}>
-          <FormControl fullWidth sx={{ "& label": { fontSize: "1.3rem", paddingRight: "1rem" } }}>
+          <FormControl
+            fullWidth
+            sx={{
+              "& label": {
+                fontSize: "1.4rem",
+                paddingRight: 1,
+                backgroundColor: "#f0f2f5",
+              },
+            }}
+            variant="outlined"
+          >
             <InputLabel id="demo-simple-select-label">Regions</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -87,7 +104,12 @@ function EditForm(props) {
           </FormControl>
         </Grid>
         <Grid item xs={4}>
-          <FormControl fullWidth disabled={disabled}>
+          <FormControl
+            fullWidth
+            disabled={disabled}
+            sx={{ "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" } }}
+            variant="outlined"
+          >
             <InputLabel id="demo-simple-select-label">City</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -111,12 +133,19 @@ function EditForm(props) {
             label="Location"
             variant="outlined"
             fullWidth
-            sx={{ mb: 2 }}
+            sx={{
+              mb: 2,
+              "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" },
+            }}
             disabled={disabled}
           />
         </Grid>
         <Grid item xs={4}>
-          <FormControl fullWidth>
+          <FormControl
+            fullWidth
+            sx={{ "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" } }}
+            variant="outlined"
+          >
             <InputLabel id="demo-simple-select-label">departure time</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -141,13 +170,20 @@ function EditForm(props) {
             label="Daytime"
             variant="outlined"
             fullWidth
-            sx={{ mb: 2 }}
+            sx={{
+              mb: 2,
+              "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" },
+            }}
             value={daytime}
             onChange={handleChangeDaytime}
           />
         </Grid>
         <Grid item xs={4}>
-          <FormControl fullWidth>
+          <FormControl
+            fullWidth
+            sx={{ "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" } }}
+            variant="outlined"
+          >
             <InputLabel id="demo-simple-select-label">Night</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -189,7 +225,14 @@ function EditForm(props) {
                       rows={4}
                       multiline
                       fullWidth
-                      sx={{ mb: 2 }}
+                      sx={{
+                        mb: 2,
+                        "& label": {
+                          fontSize: "1.4rem",
+                          paddingRight: 1,
+                          backgroundColor: "#f0f2f5",
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={5.5}>
@@ -199,14 +242,36 @@ function EditForm(props) {
                       rows={4}
                       multiline
                       fullWidth
-                      sx={{ mb: 2 }}
+                      sx={{
+                        mb: 2,
+                        "& label": {
+                          fontSize: "1.4rem",
+                          paddingRight: 1,
+                          backgroundColor: "#f0f2f5",
+                        },
+                      }}
                     />
                   </Grid>
                 </Grid>
               </Grid>
             ))}
-        <Grid item xs={4}>
-          <FormControl fullWidth>
+        <Grid item xs={6}>
+          <TextField
+            label="Number of tours"
+            variant="outlined"
+            fullWidth
+            sx={{
+              mb: 2,
+              "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" },
+            }}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <FormControl
+            fullWidth
+            sx={{ "& label": { fontSize: "1.4rem", paddingRight: 1, backgroundColor: "#f0f2f5" } }}
+            variant="outlined"
+          >
             <InputLabel id="demo-simple-select-label">Transportation</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -222,22 +287,31 @@ function EditForm(props) {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <NumberFormat
+            variant="outlined"
             thousandSeparator={true}
-            suffix={"đ"}
+            suffix={" đ"}
             customInput={TextField}
             fullWidth
             label="Price for adult"
+            InputLabelProps={{
+              style: { fontSize: "1.4rem", paddingRight: 4, backgroundColor: "#f0f2f5" },
+            }}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <NumberFormat
+            variant="outlined"
             thousandSeparator={true}
-            suffix={"đ"}
+            suffix={" đ"}
             customInput={TextField}
             fullWidth
-            label="Price for adult"
+            label="Price for child"
+            // sx={{ "& label": { defaultProps: { sx: { fontSize: "1.4rem" } } } }}
+            InputLabelProps={{
+              style: { fontSize: "1.4rem", paddingRight: 4, backgroundColor: "#f0f2f5" },
+            }}
           />
         </Grid>
       </Grid>
@@ -248,4 +322,4 @@ function EditForm(props) {
   );
 }
 
-export default EditForm;
+export default CreateForm;
