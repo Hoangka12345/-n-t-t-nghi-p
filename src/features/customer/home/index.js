@@ -7,6 +7,7 @@ import TourPage from "./pages/TourPage";
 import HistoryPage from "./pages/HistoryPage";
 import NaturePage from "./pages/NaturePage";
 import FoodPage from "./pages/FoodPage";
+import CompanyPage from "./pages/CompanyPage";
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <Route path="/history" element={<HistoryPage />} />
       <Route path="/nature" element={<NaturePage />} />
       <Route path="/food" element={<FoodPage />} />
+      <Route path="/company-introduction" element={<CompanyPage />} />
     </Routes>
   );
 }

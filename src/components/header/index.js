@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 import { useNavigate } from "react-router-dom";
-import { Link, NavLink } from "react-router-dom";
-import { Box, Container, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Box, Container } from "@mui/material";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Dialog from "@mui/material/Dialog";
@@ -17,14 +17,6 @@ import Register from "../../features/Auth/components/Register";
 import Login from "../../features/Auth/components/Login";
 
 import "./styles.css";
-
-const styles = {
-  link: {
-    textDecoration: "none",
-    color: "#fff",
-    fontSize: "20px",
-  },
-};
 
 function Header(props) {
   const Mode = {
@@ -50,10 +42,6 @@ function Header(props) {
     }
   };
 
-  const handleUserClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
@@ -74,7 +62,7 @@ function Header(props) {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#252525", position: "fixed", width: "100vw", zIndex: "1" }}>
+    <Box sx={{ backgroundColor: "#252525", position: "fixed", width: "100vw", zIndex: "2" }}>
       <Container sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Box sx={{ width: "200px" }} as={Link} to="/">
           <img src={logo} width="100%" />

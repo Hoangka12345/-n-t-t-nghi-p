@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Chip, Paper } from "@mui/material";
+import { Box, Button, Chip, Paper, Link } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import BusinessIcon from "@mui/icons-material/Business";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 
@@ -119,6 +120,30 @@ function Tour(props) {
             <EventAvailableIcon fontSize="large" />
             <Box component="span">KH: Các ngày trong tuần</Box>
           </Box>
+          {location.pathname === "/tours" ? (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mt: 2,
+                fontSize: "1.6rem",
+              }}
+            >
+              <BusinessIcon fontSize="large" />
+              <Box component="span">
+                <Box component="span">Cty: </Box>
+                <Box component="span">
+                  <Link
+                    onClick={() => navigate("/company-introduction")}
+                    sx={{ cursor: "pointer" }}
+                  >
+                    Hoang Ka
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+          ) : null}
+
           <Box sx={{ mt: 2 }}>
             <Chip label="available" color="info" sx={{ fontSize: "1.6rem" }} />
             <Chip label="1" color="info" sx={{ fontSize: "1.6rem", ml: 2 }} />

@@ -5,7 +5,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import Slide from "../components/Slide";
 import Intro from "../components/intro";
 import { intro, places } from "../../../../fakeData";
-import FeedBackList from "../components/FeedBackList";
+import FeedBackList from "../components/feedback/FeedBackList";
 import FeedBackForm from "../components/FeedBackForm";
 import BackToTop from "../../../../components/BackToTop";
 

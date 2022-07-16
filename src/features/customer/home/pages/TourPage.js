@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import queryString from "query-string";
-import { Box, Container, Grid, Pagination, Paper } from "@mui/material";
+import { Box, Chip, Container, Grid, Pagination, Paper } from "@mui/material";
 import Header from "../../../../components/header";
 
-import tour from "../../../../assets/tour.psd";
 import Tour from "../../../../components/Tour";
-import FavoriteTours from "../components/FavoriteTours";
 import Footer from "../../../../components/footer";
 import BackToTop from "../../../../components/BackToTop";
+import Search from "../components/filters/Search";
+import TourSort from "../components/filters/TourSort";
+import TopTour from "../components/TopTour";
 
 TourPage.propTypes = {};
 
@@ -30,8 +31,22 @@ const Styles = {
 };
 
 function TourPage(props) {
+  const [chip, setChip] = useState("info");
   const location = useLocation();
   const param = queryString.parse(location.search);
+
+  const handleClickChip = () => {
+    if (chip === "info") {
+      setChip("default");
+    } else {
+      setChip("info");
+    }
+  };
+
+  const handleDeleteChip = () => {
+    console.log("abc");
+  };
+
   return (
     <Box>
       <Header />
@@ -62,6 +77,35 @@ function TourPage(props) {
                   : "Du lịch Nam Bộ"}
               </Box>
             </Grid>
+            <Grid container sx={{ mb: 2 }}>
+              <Paper sx={{ width: "100%", padding: "1rem 0" }}>
+                <Box
+                  sx={{
+                    width: "90%",
+                    margin: "0 auto",
+                  }}
+                >
+                  <Search />
+                  <TourSort />
+                </Box>
+                <Box sx={{ borderTop: "1px solid #999" }}>
+                  <Box sx={{ width: "90%", margin: "3rem auto 1rem" }}>
+                    <Chip
+                      label="Tour được quan tâm nhất"
+                      color={chip}
+                      sx={{ fontSize: "1.6rem" }}
+                      onClick={handleClickChip}
+                    />
+                    <Chip
+                      label="Hà Nội"
+                      color="info"
+                      sx={{ fontSize: "1.6rem", ml: 2 }}
+                      onDelete={handleDeleteChip}
+                    />
+                  </Box>
+                </Box>
+              </Paper>
+            </Grid>
             <Grid container spacing={3}>
               {[...new Array(6)].map(() => (
                 <Grid item md={4} sm={6} xs={12}>
@@ -72,20 +116,20 @@ function TourPage(props) {
             </Grid>
           </Grid>
           <Grid item xs={3}>
-            <Paper sx={{ padding: "2rem 1rem" }}>
+            <Paper sx={{ padding: "2rem 1rem", borderBottom: "1px solid #999" }}>
               <Box
                 sx={{
-                  fontSize: "1.6rem",
+                  fontSize: "1.7rem",
                   fontWeight: "bold",
                   textAlign: "center",
-                  borderBottom: "1px solid #999",
-                  pb: 2,
                 }}
               >
                 Các tours được quan tâm nhất
               </Box>
-              <FavoriteTours />
             </Paper>
+            {[...new Array(4)].map(() => (
+              <TopTour />
+            ))}
           </Grid>
         </Grid>
       </Container>
