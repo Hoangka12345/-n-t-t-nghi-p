@@ -2,21 +2,13 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 import { useNavigate } from "react-router-dom";
-import { Link, NavLink } from "react-router-dom";
-import { Avatar, Box, Container, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Avatar, Box, Container } from "@mui/material";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import CloseIcon from "@mui/icons-material/Close";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 
 import logo from "../../assets/logo.png";
-import Register from "../../features/Auth/components/Register";
-import Login from "../../features/Auth/components/Login";
 
-import "./styles.css";
+// import "./styles.css";
 
 const styles = {
   link: {

@@ -12,3 +12,14 @@
   font-weight: bold;
   margin: 4rem 0 2rem;
 }
+
+.footer__contact li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__contact li:hover {
+  color: #fff;
+}

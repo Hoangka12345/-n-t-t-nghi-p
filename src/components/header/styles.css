@@ -55,6 +55,10 @@
   margin-bottom: 2rem;
 }
 
+.menu_item:hover a {
+  color: #f09936;
+}
+
 .link {
   text-decoration: none;
   color: #333;

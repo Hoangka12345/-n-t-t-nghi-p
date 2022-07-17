@@ -17,10 +17,10 @@ TourPage.propTypes = {};
 const Styles = {
   category: {
     width: "100%",
-    height: "3rem",
+    height: "4rem",
     backgroundColor: "#0078ff",
     color: "white",
-    fontSize: "1.8rem",
+    fontSize: "2rem",
     lineHeight: "3rem",
     fontWeight: "bold",
     borderRadius: "0.5rem",

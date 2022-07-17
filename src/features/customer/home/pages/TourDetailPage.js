@@ -1,8 +1,11 @@
 import React from "react";
-import Header from "../../../../components/header";
-import Footer from "../../../../components/footer";
+import { useNavigate } from "react-router-dom";
+import queryString from "query-string";
 import { Box, Container, Grid } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+
+import Header from "../../../../components/header";
+import Footer from "../../../../components/footer";
 import TourIntro from "../components/tourDetail/TourIntro";
 import BookingRight from "../components/tourDetail/BookingRight";
 import Planning from "../components/tourDetail/Planning";
@@ -11,6 +14,7 @@ import Feedback from "../components/tourDetail/Feedback";
 import BackToTop from "../../../../components/BackToTop";
 
 function TourDetailPage(props) {
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -27,9 +31,31 @@ function TourDetailPage(props) {
             >
               <Box sx={{ color: "#083e7e" }}>Du lịch</Box>
               <KeyboardDoubleArrowRightIcon sx={{ fontSize: "1.3rem", margin: "0 0.4rem" }} />
-              <Box sx={{ color: "#083e7e" }}>Du lịch miền Bắc</Box>
+              <Box
+                sx={{ color: "#083e7e", cursor: "pointer" }}
+                onClick={() =>
+                  navigate({
+                    pathname: "/tours",
+                    search: queryString.stringify({ _place: "center_vietnam" }),
+                  })
+                }
+              >
+                Du lịch miền Bắc
+              </Box>
               <KeyboardDoubleArrowRightIcon sx={{ fontSize: "1.3rem", margin: "0 0.4rem" }} />
-              <Box sx={{ color: "#ccc" }}>
+              <Box
+                sx={{ color: "#083e7e", cursor: "pointer" }}
+                // onClick={() =>
+                //   navigate({
+                //     pathname: "/tours",
+                //     search: queryString.stringify({ _place: "center_vietnam" }),
+                //   })
+                // }
+              >
+                Hà Nội
+              </Box>
+              <KeyboardDoubleArrowRightIcon sx={{ fontSize: "1.3rem", margin: "0 0.4rem" }} />
+              <Box sx={{ color: "#646363" }}>
                 Tour du lịch Hội An Đà Nẵng 3N2Đ – Chuyến khám phá thiên đường du lịch miền Bắc
               </Box>
             </Box>
